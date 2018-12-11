@@ -6,21 +6,24 @@
 </head>
 
 <body>
-
-  {{> form }}
-
+  <h1>Insert your informations</h1>
+  {{>form}}
 </body>
 
 <template name="form">
-  <form>
-    <label for="nameField">Nom</label>
-    <input type="text" name="lastname" placeholder="Lassal" id="lastField">
-    <label for="nameField">Prénom</label>
-    <input type="text" name="firstname" placeholder="Jean" id="firstField">
-    <label for="nameField">Lien Github</label>
-    <input type="text" name="link" placeholder="Link" id="linkField">
-
-    <input type="submit" value="SUBMIT">
-  </form>
+   <form style="width: 80%;">
+    <fieldset>
+     <label for="nameField">Nom</label>
+     <input type="text" placeholder="Lassal" id="nameField">
+     <label for="nameField">Prénom</label>
+     <input type="text" placeholder="Jean" id="nameField">
+     <label for="nameField">Lien Github</label>
+     <input type="text" placeholder="Link" id="nameField">
+     <input class="button-primary" type="submit" value="Send">
+    </fieldset>
+   </form>
 </template>
 
+<template name="list">
+
+</template>
