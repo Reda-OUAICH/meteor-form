@@ -1,29 +1,44 @@
 <head>
   <title>meteor-form</title>
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-  <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+  />
+  <link
+    rel="stylesheet"
+    href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"
+  />
 </head>
 
 <body>
   <h1>Insert your informations</h1>
-  {{>form}}
+  {{> Formulaire}}
+  {{> list}}
 </body>
 
-<template name="form">
-   <form style="width: 80%;">
+
+<template name="Formulaire">
+  <form id="form" style="width: 80%;">
     <fieldset>
-     <label for="nameField">Nom</label>
-     <input type="text" placeholder="Lassal" id="nameField">
-     <label for="nameField">Prénom</label>
-     <input type="text" placeholder="Jean" id="nameField">
-     <label for="nameField">Lien Github</label>
-     <input type="text" placeholder="Link" id="nameField">
-     <input class="button-primary" type="submit" value="Send">
+      <label for="nameField">Nom</label>
+      <input type="text" placeholder="Lassal" id="firstname" />
+      <label for="nameField">Prénom</label>
+      <input type="text" placeholder="Jean" id="lastname" />
+      <label for="nameField">Lien Github</label>
+      <input type="text" placeholder="Link" id="link" />
+      <input class="button-primary" type="submit" value="Send" />
     </fieldset>
-   </form>
+  </form>
 </template>
 
 <template name="list">
-
+  <ul>
+    {{#each allStudents}}
+    <li>{{ firstname }} - {{ lastname }} - {{ link }}</li>
+    {{/each}}
+  </ul>
 </template>
