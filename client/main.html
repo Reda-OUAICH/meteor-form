@@ -16,10 +16,8 @@
 
 <body>
   <h1>Insert your informations</h1>
-  {{> Formulaire}}
-  {{> list}}
+  {{> Formulaire}} {{> list}}
 </body>
-
 
 <template name="Formulaire">
   <form id="form" style="width: 80%;">
@@ -38,7 +36,9 @@
 <template name="list">
   <ul>
     {{#each allStudents}}
-    <li>{{ firstname }} - {{ lastname }} - {{ link }}</li>
+    <li>
+      {{ firstname }} - {{ lastname }} - <a href="{{ link }}">{{ link }}</a>
+    </li>
     {{/each}}
   </ul>
 </template>
