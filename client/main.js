@@ -1,18 +1,27 @@
-import { Template } from 'meteor/templating';
+import {
+  Template
+} from 'meteor/templating';
+import student from '../db/student';
 import './main.html';
 
+Template.list.helpers({
+  allStudents(){
+    return student.find();
+  }
+})
 
-if (Meteor.isClient) {
+Template.Formulaire.events({
 
-  Template.form.events({
+  'submit #form': function (event, template) {
+    event.preventDefault();
+    var firstname = template.find('#firstname').value;
+    var lastname = template.find('#lastname').value;
+    var link = template.find('#link').value;
 
-    'submit form': function (event) {
-      event.preventDefault();
-      var firstname = event.target.firstname.value;
-      var lastname = event.target.lastname.value;
-      var link = event.target.link.value;
-      var result = firstname && lastname && link;
-      console.log(result);
-    }
-  });
-}
+    student.insert({
+      firstname: firstname,
+      lastname: lastname,
+      link : link
+    })
+  }
+});
