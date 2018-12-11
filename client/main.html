@@ -7,7 +7,7 @@
 
 <body>
 
-<form style="width: 80%;">
+<!-- <form style="width: 80%">
   <fieldset>
     <label for="nameField">Nom</label>
     <input type="text" placeholder="Lassal" id="nameField">
@@ -17,8 +17,20 @@
     <input type="text" placeholder="Link" id="nameField">
     <input class="button-primary" type="submit" value="Send">
   </fieldset>
-</form>
+</form> -->
+  {{> form }}
 
 </body>
+<template name="form">
+  <form>
+    <label for="nameField">Nom</label>
+    <input type="text" name="lastname" placeholder="Lassal" id="nameField">
+    <label for="nameField">Prénom</label>
+    <input type="text" name="firstname" placeholder="Jean" id="nameField">
+    <label for="nameField">Lien Github</label>
+    <input type="text" name="link" placeholder="Link" id="nameField">
 
-<template name="form"></template>
+    <input type="submit" value="SUBMIT">
+  </form>
+</template>
+
