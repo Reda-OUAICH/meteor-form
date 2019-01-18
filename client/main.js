@@ -1,6 +1,4 @@
-import {
-  Template
-} from 'meteor/templating';
+import { Template } from 'meteor/templating';
 import student from '../db/student';
 import './main.html';
 
@@ -17,6 +15,7 @@ Template.Formulaire.events({
     var firstname = template.find('#firstname').value;
     var lastname = template.find('#lastname').value;
     var link = template.find('#link').value;
+    // var delete_student =  ;
     event.target.firstname.value = '';
     event.target.lastname.value = '';
     event.target.link.value = '';
