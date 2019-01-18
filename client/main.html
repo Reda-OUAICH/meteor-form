@@ -16,13 +16,11 @@
 
 <body>
   <h1>Insert your informations</h1>
-  {{> Formulaire}}
-  {{> list}}
+  {{> Formulaire}} {{> list}}
 </body>
 
-
 <template name="Formulaire">
-  <form id="form" style="width: 80%;">
+  <form id="form" style="margin: 0 auto; width: 60%;">
     <fieldset>
       <label for="nameField">Nom</label>
       <input type="text" placeholder="Lassal" id="firstname" />
@@ -38,7 +36,9 @@
 <template name="list">
   <ul>
     {{#each allStudents}}
-    <li>{{ firstname }} - {{ lastname }} - {{ link }}</li>
+    <li>
+      {{ firstname }} - {{ lastname }} - <a href="{{ link }}">{{ link }}</a>
+    </li>
     {{/each}}
   </ul>
 </template>
